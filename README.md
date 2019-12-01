@@ -1,41 +1,40 @@
-# DB設計
+# DB設計
 
-## usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|e-mail|string|null: false,   |
-|password|string|null: false|
-### Association
-- belongs_to :user
-- has_many :comments
+|name|string|null: false|
+|e-mail|string|null: false,   |
+|password|string|null: false|
+### Association
+- belongs_to :user
+- has_many :comments
 
-## groupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-### Association
-- belongs_to :user
-- has_many :comments
+|name|string|null: false|
+### Association
+- belongs_to :user
+- has_many :comments
 
-## usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|string|null: false|
-|image|string|null: false,   |
-|groups.id|integer|null: false|
-|users.id|integer|null: false|
-|timestamo|integer|null: false|
-### Association
-- belongs_to :user
-- has_many :comments
+|message|string|null: false|
+|image|string|null: false,   |
+|groups.id|integer|null: false|
+|users.id|integer|null: false|
+|timestamo|integer|null: false|
+### Association
+- belongs_to :user
+- has_many :comments
 
-## groups_usersテーブル
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :group
-- belongs_to :user
-
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :group
+- belongs_to :user
