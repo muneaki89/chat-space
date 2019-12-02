@@ -7,7 +7,8 @@
 |e-mail|string|null: false,   |
 |password|string|null: false|
 ### Association
-- belongs_to :user
+- has_many :groups_users
+- has_many :groups, through :groups_users
 - has_many :comments
 
 ## groupsテーブル
@@ -15,26 +16,26 @@
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- belongs_to :user
+- has_many :groups_user
+- has_many :users, through :groups_users
 - has_many :comments
 
-## usersテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|string|null: false|
-|image|string|null: false,   |
-|groups.id|integer|null: false|
-|users.id|integer|null: false|
-|timestamo|integer|null: false|
+|message|string|
+|image|string|
+|groups|references|null: false, foreign_key: true|
+|users|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
+- belongs_to :groups
 
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|groups_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
+- belongs_to :groups
 - belongs_to :user
