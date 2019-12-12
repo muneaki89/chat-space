@@ -13,7 +13,7 @@
       font-weight: bold;
     }
     &__lists {
-      display: inline-block;
+      display: flex;
       float: right;
       .list {
         display: inline-block;
@@ -21,6 +21,7 @@
       .icon {
         color: $white;
         font-size: $side_header_font;
+        margin-left: 0.3rem;
       }
     }
   }
