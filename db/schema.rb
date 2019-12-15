@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20191215003308) do
     t.datetime "updated_at", null: false
   end
 
+ActiveRecord::Schema.define(version: 20191214130910) do
+
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
@@ -41,6 +44,9 @@ ActiveRecord::Schema.define(version: 20191215003308) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+
+
 end
