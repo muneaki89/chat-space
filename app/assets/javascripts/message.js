@@ -60,7 +60,6 @@ $('#new_message').on('submit', function(e){
   .fail(function(){
     alert('error');
   });
-  return false;
   });
 });
 
