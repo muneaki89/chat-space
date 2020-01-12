@@ -67,7 +67,6 @@ $('#new_message').on('submit', function(e){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages)
         var insertHTML = '';
         messages.forEach(function (message){
           insertHTML += buildHTML(message)
@@ -77,7 +76,7 @@ $('#new_message').on('submit', function(e){
       })
     
     .fail(function() {
-      console.log('error');
+      alert(error);
     });
   };
 
