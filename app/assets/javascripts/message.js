@@ -54,7 +54,9 @@ $('#new_message').on('submit', function(e){
      .done(function(data){
        var html = buildHTML(data);
        $('.messages').append(html);
+       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
        $('form')[0].reset();
+       $(".form__submit").prop("disabled", false);
      })
   });
 
@@ -73,7 +75,7 @@ $('#new_message').on('submit', function(e){
           insertHTML += buildHTML(message)
         });
           $('.messages').append(insertHTML);
-          $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
           $("#new_message")[0].reset();
           $(".form__submit").prop("disabled", false);
         }
