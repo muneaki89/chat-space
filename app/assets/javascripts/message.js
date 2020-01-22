@@ -58,6 +58,9 @@ $('#new_message').on('submit', function(e){
        $('form')[0].reset();
        $(".form__submit").prop("disabled", false);
      })
+     .fail(function() {
+      alert("メッセージを入力してください");
+  });
   });
 
   var reloadMessages = function() {
